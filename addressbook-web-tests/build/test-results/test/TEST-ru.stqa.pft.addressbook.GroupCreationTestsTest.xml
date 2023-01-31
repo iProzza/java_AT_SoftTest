@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="ru.stqa.pft.addressbook.GroupCreationTestsTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2023-01-31T16:28:17" hostname="DESKTOP-TV3SI6E" time="1.519">
+<testsuite name="ru.stqa.pft.addressbook.GroupCreationTestsTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2023-01-31T16:55:18" hostname="DESKTOP-TV3SI6E" time="0.795">
   <properties/>
-  <testcase name="GroupCreationTests" classname="ru.stqa.pft.addressbook.GroupCreationTestsTest" time="1.519"/>
+  <testcase name="testGroupCreation" classname="ru.stqa.pft.addressbook.GroupCreationTestsTest" time="0.795"/>
   <system-out><![CDATA[]]></system-out>
-  <system-err><![CDATA[1675182495252	geckodriver	INFO	Listening on 127.0.0.1:28150
-1675182495439	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla FirefoxESR\\firefox.exe" "--marionette" "--remote-debugging-port" "29758" "--remote-allow-hosts" "localhost" "--remote-allow-origins" "http://127.0.0.1:29758/,http://localhost:29758/,http://[::1]:29758/" "-no-remote" "-profile" "C:\\Users\\askol\\AppData\\Local\\Temp\\rust_mozprofilePnJv76"
-1675182495647	Marionette	INFO	Marionette enabled
-1675182495651	Marionette	INFO	Listening on port 56896
-WebDriver BiDi listening on ws://localhost:29758
-Read port: 56896
-1675182495748	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
-console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\askol\\AppData\\Local\\Temp\\rust_mozprofilePnJv76\\search.json.mozlz4", (void 0)))
-DevTools listening on ws://localhost:29758/devtools/browser/b557c0b4-23d9-4610-b517-863e75162367
+  <system-err><![CDATA[1675184115766	geckodriver	INFO	Listening on 127.0.0.1:37942
+1675184115952	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla FirefoxESR\\firefox.exe" "--marionette" "--remote-debugging-port" "38705" "--remote-allow-hosts" "localhost" "--remote-allow-origins" "http://127.0.0.1:38705/,http://localhost:38705/,http://[::1]:38705/" "-no-remote" "-profile" "C:\\Users\\askol\\AppData\\Local\\Temp\\rust_mozprofilehv1Zj6"
+1675184116158	Marionette	INFO	Marionette enabled
+1675184116161	Marionette	INFO	Listening on port 62795
+Read port: 62795
+WebDriver BiDi listening on ws://localhost:38705
+1675184116253	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\askol\\AppData\\Local\\Temp\\rust_mozprofilehv1Zj6\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:38705/devtools/browser/6c8f1736-bcde-43a5-b1fd-7d5aa58ca51c
 console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "http://localhost:8080"
 console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "http://localhost:8080"
 JavaScript error: resource://gre/modules/LoginManagerParent.jsm, line 136: TypeError: gRecipeManager is null
@@ -25,5 +25,8 @@ console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message f
 JavaScript error: resource://gre/modules/LoginManagerParent.jsm, line 136: TypeError: gRecipeManager is null
 console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "http://localhost:8080"
 JavaScript error: resource://gre/modules/LoginManagerParent.jsm, line 136: TypeError: gRecipeManager is null
+1675184118937	CDP	ERROR	Invalid browser preferences for CDP. Set "fission.webContentIsolationStrategy"to 0 and "fission.bfcacheInParent" to false before Firefox starts.
+1675184118954	Marionette	INFO	Stopped listening on port 62795
+JavaScript error: resource://gre/modules/TerminatorTelemetry.jsm, line 71: AbortError: IOUtils: Shutting down and refusing additional I/O tasks
 ]]></system-err>
 </testsuite>
