@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="ru.stqa.pft.addressbook.GroupDeletionTests" tests="1" skipped="0" failures="0" errors="0" timestamp="2023-02-01T17:51:07" hostname="DESKTOP-TV3SI6E" time="0.35">
+  <properties/>
+  <testcase name="testGroupDeletion" classname="ru.stqa.pft.addressbook.GroupDeletionTests" time="0.35"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[1675273865223	geckodriver	INFO	Listening on 127.0.0.1:12513
+1675273865404	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla FirefoxESR\\firefox.exe" "--marionette" "--remote-debugging-port" "22488" "--remote-allow-hosts" "localhost" "--remote-allow-origins" "http://127.0.0.1:22488/,http://localhost:22488/,http://[::1]:22488/" "-no-remote" "-profile" "C:\\Users\\askol\\AppData\\Local\\Temp\\rust_mozprofileS3f7eQ"
+1675273865621	Marionette	INFO	Marionette enabled
+1675273865625	Marionette	INFO	Listening on port 61470
+WebDriver BiDi listening on ws://localhost:22488
+Read port: 61470
+1675273865891	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\askol\\AppData\\Local\\Temp\\rust_mozprofileS3f7eQ\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:22488/devtools/browser/d53d5141-9d11-44a5-95a1-f3b9649587d7
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "http://localhost:8080"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "http://localhost:8080"
+JavaScript error: resource://gre/modules/LoginManagerParent.jsm, line 136: TypeError: gRecipeManager is null
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "http://localhost:8080"
+JavaScript error: resource://gre/modules/LoginManagerParent.jsm, line 136: TypeError: gRecipeManager is null
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "http://localhost:8080"
+JavaScript error: resource://gre/modules/LoginManagerParent.jsm, line 136: TypeError: gRecipeManager is null
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "http://localhost:8080"
+JavaScript error: resource://gre/modules/LoginManagerParent.jsm, line 136: TypeError: gRecipeManager is null
+1675273868347	CDP	ERROR	Invalid browser preferences for CDP. Set "fission.webContentIsolationStrategy"to 0 and "fission.bfcacheInParent" to false before Firefox starts.
+1675273868365	Marionette	INFO	Stopped listening on port 61470
+JavaScript error: resource://gre/modules/TerminatorTelemetry.jsm, line 71: AbortError: IOUtils: Shutting down and refusing additional I/O tasks
+]]></system-err>
+</testsuite>
