@@ -67,12 +67,6 @@ public class TestBase {
     wd.findElement(By.linkText("groups")).click();
   }
 
-  @AfterMethod
-  public void tearDown() {
-  wd.quit();
-  }
-
-
   protected void deleteSelectedGroups() {
     wd.findElement(By.name("delete")).click();
   }
@@ -80,4 +74,36 @@ public class TestBase {
   protected void selectGroup() {
     wd.findElement(By.name("selected[]")).click();
   }
+
+  protected void goToContactPage() {
+    wd.findElement(By.linkText("add new")).click();
+  }
+
+  protected void fillContactForm(ContactData contactData) {
+    wd.findElement(By.name("firstname")).click();
+    wd.findElement(By.name("firstname")).sendKeys(contactData.getFirstname());
+    wd.findElement(By.name("lastname")).click();
+    wd.findElement(By.name("lastname")).sendKeys(contactData.getLastname());
+    wd.findElement(By.name("home")).click();
+    wd.findElement(By.name("home")).sendKeys(contactData.getPhone());
+    wd.findElement(By.name("email")).click();
+    wd.findElement(By.name("email")).sendKeys(contactData.getEmail());
+  }
+
+  protected void submitContactsForm() {
+    wd.findElement(By.cssSelector("input:nth-child(87)")).click();
+  }
+
+  protected void goToStartPage() {
+    wd.findElement(By.id("content")).click();
+  }
+
+
+
+  @AfterMethod
+  public void tearDown() {
+  wd.quit();
+  }
+
+
 }
