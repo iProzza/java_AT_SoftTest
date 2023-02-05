@@ -4,33 +4,28 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import ru.stqa.pft.addressbook.model.ContactData;
 
-public class ContactHelper {
-  private FirefoxDriver wd;
+public class ContactHelper extends HelperBase{
 
   public ContactHelper(FirefoxDriver wd) {
-    this.wd = wd;
+    super(wd);
   }
 
   public void goToContactPage() {
-    wd.findElement(By.linkText("add new")).click();
+    click(By.linkText("add new"));
   }
 
   public void fillContactForm(ContactData contactData) {
-    wd.findElement(By.name("firstname")).click();
-    wd.findElement(By.name("firstname")).sendKeys(contactData.getFirstname());
-    wd.findElement(By.name("lastname")).click();
-    wd.findElement(By.name("lastname")).sendKeys(contactData.getLastname());
-    wd.findElement(By.name("home")).click();
-    wd.findElement(By.name("home")).sendKeys(contactData.getPhone());
-    wd.findElement(By.name("email")).click();
-    wd.findElement(By.name("email")).sendKeys(contactData.getEmail());
+    type(By.name("firstname"), contactData.getFirstname());
+    type(By.name("lastname"), contactData.getLastname());
+    type(By.name("home"), contactData.getPhone());
+    type(By.name("email"), contactData.getEmail());
   }
 
   public void submitContactsForm() {
-    wd.findElement(By.cssSelector("input:nth-child(87)")).click();
+    click(By.cssSelector("input:nth-child(87)"));
   }
 
   public void goToStartPage() {
-    wd.findElement(By.id("content")).click();
+    click(By.id("content"));
   }
 }
