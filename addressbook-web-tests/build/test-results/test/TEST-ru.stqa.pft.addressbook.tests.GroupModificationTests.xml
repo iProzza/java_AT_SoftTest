@@ -1,23 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="ru.stqa.pft.addressbook.tests.AddContactsTests" tests="1" skipped="0" failures="0" errors="0" timestamp="2023-02-05T07:58:07" hostname="DESKTOP-TV3SI6E" time="1.215">
+<testsuite name="ru.stqa.pft.addressbook.tests.GroupModificationTests" tests="1" skipped="0" failures="0" errors="0" timestamp="2023-02-05T08:38:35" hostname="DESKTOP-TV3SI6E" time="1.052">
   <properties/>
-  <testcase name="addsContactsTestsTest" classname="ru.stqa.pft.addressbook.tests.AddContactsTests" time="1.215"/>
+  <testcase name="testGroupModification" classname="ru.stqa.pft.addressbook.tests.GroupModificationTests" time="1.052"/>
   <system-out><![CDATA[]]></system-out>
-  <system-err><![CDATA[1675583884993	geckodriver	INFO	Listening on 127.0.0.1:25373
-1675583885170	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "20316" "--remote ... localhost:20316/,http://[::1]:20316/" "-no-remote" "-profile" "C:\\Users\\askol\\AppData\\Local\\Temp\\rust_mozprofileUeMPPY"
-1675583885373	Marionette	INFO	Marionette enabled
+  <system-err><![CDATA[1675586313345	geckodriver	INFO	Listening on 127.0.0.1:12224
+1675586313527	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "23738" "--remote ... localhost:23738/,http://[::1]:23738/" "-no-remote" "-profile" "C:\\Users\\askol\\AppData\\Local\\Temp\\rust_mozprofileuoqamn"
+1675586313726	Marionette	INFO	Marionette enabled
 Dynamically enable window occlusion 0
-1675583885377	Marionette	INFO	Listening on port 58614
-Read port: 58614
-WebDriver BiDi listening on ws://127.0.0.1:20316
-1675583885448	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
-console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\askol\\AppData\\Local\\Temp\\rust_mozprofileUeMPPY\\search.json.mozlz4", (void 0)))
-DevTools listening on ws://127.0.0.1:20316/devtools/browser/4a1ff9f9-1f46-42f2-bd3f-8458bf300a7b
+1675586313729	Marionette	INFO	Listening on port 60648
+Read port: 60648
+WebDriver BiDi listening on ws://127.0.0.1:23738
+1675586313800	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\askol\\AppData\\Local\\Temp\\rust_mozprofileuoqamn\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:23738/devtools/browser/628bf893-c473-4c68-b307-c428802ef3f7
 console.warn: LoginRecipes: "Falling back to a synchronous message for: http://localhost:8080."
 console.warn: LoginRecipes: "Falling back to a synchronous message for: http://localhost:8080."
-1675583888441	RemoteAgent	INFO	Perform WebSocket upgrade for incoming connection from 127.0.0.1:58653
-1675583888442	CDP	ERROR	Invalid browser preferences for CDP. Set "fission.webContentIsolationStrategy"to 0 and "fission.bfcacheInParent" to false before Firefox starts.
-1675583888459	Marionette	INFO	Stopped listening on port 58614
+1675586316727	RemoteAgent	INFO	Perform WebSocket upgrade for incoming connection from 127.0.0.1:60686
+1675586316728	CDP	ERROR	Invalid browser preferences for CDP. Set "fission.webContentIsolationStrategy"to 0 and "fission.bfcacheInParent" to false before Firefox starts.
+1675586316746	Marionette	INFO	Stopped listening on port 60648
 Dynamically enable window occlusion 1
 WARNING: A blocker encountered an error while we were waiting.
           Blocker:  Waiting for ping task
