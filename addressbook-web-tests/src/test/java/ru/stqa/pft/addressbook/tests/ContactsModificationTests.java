@@ -14,8 +14,8 @@ public class ContactsModificationTests extends TestBase{
       app.getContactHelper().createContact(new ContactData("Volodya", "Volopas", "test1"), true);
     }
     app.getContactHelper().goToHome();
-    app.getContactHelper().initContactsModification();
-    app.getContactHelper().fillContactForm(new ContactData("Volodya", "Volopass", null), false);
+    app.getContactHelper().initContactsModification(before - 1);
+    app.getContactHelper().fillContactForm(new ContactData("Volodya", "Volopasss", null), false);
     app.getContactHelper().submitContactsModification();
     app.getNavigationHelper().goToHomePage();
     int after = app.getContactHelper().getContactsCount();
