@@ -9,10 +9,10 @@ import java.util.List;
 public class ContactsDeletionTests extends TestBase{
 
   @Test
-  public void tstContactDeletion(){
+  public void testContactDeletion() {
     app.getContactHelper().goToHome();
-    if (! app.getContactHelper().isThereAContact()) {
-        app.getContactHelper().createContact(new ContactData("Volodya", "HHHH", "test1"), true);
+    if (!app.getContactHelper().isThereAContact()) {
+      app.getContactHelper().createContact(new ContactData("Volodya", "HHHH", "test1"), true);
     }
     app.getContactHelper().goToHome();
     List<ContactData> before = app.getContactHelper().getContactList();
@@ -21,6 +21,9 @@ public class ContactsDeletionTests extends TestBase{
     app.getContactHelper().confirmDeletedContact();
     app.getContactHelper().goToHome();
     List<ContactData> after = app.getContactHelper().getContactList();
-    Assert.assertEquals(after.size() , before.size() - 1);
+    Assert.assertEquals(after.size(), before.size() - 1);
+
+    before.remove(before.size() - 1);
+      Assert.assertEquals(before, after);
   }
 }
