@@ -5,6 +5,8 @@ import org.testng.annotations.Test;
 import ru.stqa.pft.addressbook.model.ContactData;
 import ru.stqa.pft.addressbook.model.GroupData;
 
+import java.util.List;
+
 
 public class AddContactsTests extends TestBase {
 
@@ -15,11 +17,11 @@ public class AddContactsTests extends TestBase {
       app.getGroupHelper().crateGroup(new GroupData("test1", null, null));
     }
     app.getContactHelper().goToHome();
-    int before = app.getContactHelper().getContactsCount();
+    List<ContactData> before = app.getContactHelper().getContactList();
     app.getContactHelper().createContact(new ContactData("Volodya", "HHHH", "test1"), true);
     app.getContactHelper().goToHome();
-    int after = app.getContactHelper().getContactsCount();
-    Assert.assertEquals(after, before + 1);
+    List<ContactData> after = app.getContactHelper().getContactList();
+    Assert.assertEquals(after.size(), before.size() + 1);
   }
 
 }
