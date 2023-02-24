@@ -18,12 +18,11 @@ public class AddContactsTests extends TestBase {
     }
     app.getContactHelper().goToHome();
     List<ContactData> before = app.getContactHelper().getContactList();
-    app.getContactHelper().createContact(new ContactData("Volodya", "HHHH", "test1"), true);
+    app.getContactHelper().createContact(new ContactData("Volodya", "MMM", "test1"), true);
     app.getContactHelper().goToHome();
     List<ContactData> after = app.getContactHelper().getContactList();
     Assert.assertEquals(after.size(), before.size() + 1);
   }
-
 }
 
 
