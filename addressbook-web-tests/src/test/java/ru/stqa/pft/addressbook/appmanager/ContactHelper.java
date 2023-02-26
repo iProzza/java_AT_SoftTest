@@ -6,7 +6,6 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 import ru.stqa.pft.addressbook.model.ContactData;
-import ru.stqa.pft.addressbook.model.GroupData;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -69,17 +68,23 @@ public class ContactHelper extends HelperBase{
   }
 
 
-  public void createContact(ContactData contact,boolean creation) {
+  public void create(ContactData contact, boolean creation) {
     goToContactPage();
     fillContactForm(contact, creation);
     submitContactsForm();
     goToStartPage();
   }
 
-  public void modifyContact(int index, ContactData contact) {
+  public void modify(int index, ContactData contact) {
     initContactsModification(index);
     fillContactForm(contact, false);
     submitContactsModification();
+  }
+
+  public void delete(int index) {
+    selectContact(index);
+    deleteSelectContact();
+    confirmDeletedContact();
   }
 
   public boolean isThereAContact() {
@@ -90,7 +95,7 @@ public class ContactHelper extends HelperBase{
     return wd.findElements(By.name("selected[]")).size();
   }
 
-  public List<ContactData> getContactList() {
+  public List<ContactData> list() {
     List<ContactData> contacts = new ArrayList<ContactData>();
     List<WebElement> elements = wd.findElements(By.xpath("//tbody/tr[@name='entry']"));
     for (WebElement element : elements){
