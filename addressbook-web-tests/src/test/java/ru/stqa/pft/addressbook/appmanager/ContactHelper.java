@@ -76,6 +76,12 @@ public class ContactHelper extends HelperBase{
     goToStartPage();
   }
 
+  public void modifyContact(int index, ContactData contact) {
+    initContactsModification(index);
+    fillContactForm(contact, false);
+    submitContactsModification();
+  }
+
   public boolean isThereAContact() {
     return isElementPresent(By.name("selected[]"));
   }
