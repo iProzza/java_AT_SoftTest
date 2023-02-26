@@ -4,32 +4,31 @@ import java.util.Objects;
 
 public class ContactData {
   private  int id;
-  private final String firstname;
-  private final String lastname;
+  private  String firstname;
+  private  String lastname;
 //  private final String phone;
 //  private final String email;
   private String group;
 
-  public ContactData(String firstname, String lastname, String group){
-    this.id = 0;
-    this.firstname = firstname;
-    this.lastname = lastname;
-//    this.phone = phone;
-//    this.email = email;
-    this.group = group;
+
+  public ContactData withId(int id) {
+    this.id = id;
+    return this;
   }
 
-  public ContactData(int id, String firstname, String lastname, String group){
-    this.id = id;
-    this.firstname = firstname;
+  public ContactData withLastname(String lastname) {
     this.lastname = lastname;
-//    this.phone = phone;
-//    this.email = email;
-    this.group = group;
+    return this;
   }
 
-  public void setId(int id) {
-    this.id = id;
+  public ContactData withGroup(String group) {
+    this.group = group;
+    return this;
+  }
+
+  public ContactData withFirstname(String firstname) {
+    this.firstname = firstname;
+    return this;
   }
 
   public int getId() {

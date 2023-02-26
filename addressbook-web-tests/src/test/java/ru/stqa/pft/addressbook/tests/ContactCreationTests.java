@@ -19,13 +19,13 @@ public class ContactCreationTests extends TestBase {
     }
     app.contact().goToHome();
     List<ContactData> before = app.contact().list();
-    ContactData contact = new ContactData("Volodya", "MMM", "test1");
+    ContactData contact = new ContactData().withFirstname("Volodya").withLastname("MMM").withGroup("test1");
     app.contact().create(contact, true);
     app.contact().goToHome();
     List<ContactData> after = app.contact().list();
     Assert.assertEquals(after.size(), before.size() + 1);
 
-    contact.setId(after.stream().max((o1, o2) -> Integer.compare(o1.getId(), o2.getId())).get().getId());
+    contact.withId(after.stream().max((o1, o2) -> Integer.compare(o1.getId(), o2.getId())).get().getId());
     before.add(contact);
     Assert.assertEquals(new HashSet<Object>(before), new HashSet<Object>(after));
   }
