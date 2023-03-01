@@ -6,7 +6,7 @@ import ru.stqa.pft.addressbook.model.ContactData;
 import ru.stqa.pft.addressbook.model.GroupData;
 
 import java.util.HashSet;
-import java.util.List;
+import java.util.Set;
 
 
 public class ContactCreationTests extends TestBase {
@@ -14,18 +14,19 @@ public class ContactCreationTests extends TestBase {
   @Test()
   public void addsContactsTestsTest() {
     app.goTo().groupPage();
-    if (app.group().list().size() == 0) {
+    if (app.group().all().size() == 0) {
       app.group().create(new GroupData().withName("test1"));
     }
     app.contact().goToHome();
-    List<ContactData> before = app.contact().list();
+    Set<ContactData> before = app.contact().all();
     ContactData contact = new ContactData().withFirstname("Volodya").withLastname("MMM").withGroup("test1");
     app.contact().create(contact, true);
     app.contact().goToHome();
-    List<ContactData> after = app.contact().list();
+    Set<ContactData> after = app.contact().all();
     Assert.assertEquals(after.size(), before.size() + 1);
 
-    contact.withId(after.stream().max((o1, o2) -> Integer.compare(o1.getId(), o2.getId())).get().getId());
+//    contact.withId(after.stream().max((o1, o2) -> Integer.compare(o1.getId(), o2.getId())).get().getId());
+    contact.withId(after.stream().mapToInt((c) -> c.getId()).max().getAsInt());
     before.add(contact);
     Assert.assertEquals(new HashSet<Object>(before), new HashSet<Object>(after));
   }

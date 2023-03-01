@@ -8,7 +8,9 @@ import org.testng.Assert;
 import ru.stqa.pft.addressbook.model.ContactData;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 public class ContactHelper extends HelperBase{
 
@@ -42,8 +44,8 @@ public class ContactHelper extends HelperBase{
     click(By.id("content"));
   }
 
-  public void initContactsModification(int index) {
-    wd.findElements(By.xpath("//td[8]/a/img")).get(index).click();
+  public void initContactsModificationById(int id) {
+    wd.findElement(By.xpath(String.format("//input[@id='%s']/../..//img[@title='Edit']", id))).click();
   }
 
   public void submitContactsModification() {
@@ -54,9 +56,8 @@ public class ContactHelper extends HelperBase{
     click(By.linkText("home"));
   }
 
-
-  public void selectContact(int index) {
-    wd.findElements(By.name("selected[]")).get(index).click();
+  public void selectContactById(int id) {
+    wd.findElement(By.cssSelector("input[value='" + id + "']")).click();
   }
 
   public void deleteSelectContact() {
@@ -75,14 +76,14 @@ public class ContactHelper extends HelperBase{
     goToStartPage();
   }
 
-  public void modify(int index, ContactData contact) {
-    initContactsModification(index);
+  public void modify(ContactData contact) {
+    initContactsModificationById(contact.getId());
     fillContactForm(contact, false);
     submitContactsModification();
   }
 
-  public void delete(int index) {
-    selectContact(index);
+  public void delete(ContactData contact) {
+    selectContactById(contact.getId());
     deleteSelectContact();
     confirmDeletedContact();
   }
@@ -95,8 +96,9 @@ public class ContactHelper extends HelperBase{
     return wd.findElements(By.name("selected[]")).size();
   }
 
-  public List<ContactData> list() {
-    List<ContactData> contacts = new ArrayList<ContactData>();
+
+  public Set<ContactData> all() {
+    Set<ContactData> contacts = new HashSet<ContactData>();
     List<WebElement> elements = wd.findElements(By.xpath("//tbody/tr[@name='entry']"));
     for (WebElement element : elements){
       String name = element.getText();
@@ -109,6 +111,6 @@ public class ContactHelper extends HelperBase{
       contacts.add(contact);
     }
     return contacts;
-
   }
+
 }
