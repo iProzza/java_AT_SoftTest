@@ -18,13 +18,12 @@ public class ContactCreationTests extends TestBase {
       app.group().create(new GroupData().withName("test1"));
     }
     app.contact().goToHome();
-    Contacts before = (Contacts) app.contact().all();
+    Contacts before = app.contact().all();
     ContactData contact = new ContactData().withFirstname("Volodya").withLastname("MMM").withGroup("test1");
     app.contact().create(contact, true);
     app.contact().goToHome();
-    Contacts after = (Contacts) app.contact().all();
-    assertThat(after.size(), equalTo(before.size() + 1));
-
+    assertThat(app.contact().count(), equalTo(before.size() + 1));
+    Contacts after = app.contact().all();
     assertThat(after, equalTo(
             before.withAdded(contact.withId(after.stream().mapToInt((c) -> c.getId()).max().getAsInt()))));
   }
