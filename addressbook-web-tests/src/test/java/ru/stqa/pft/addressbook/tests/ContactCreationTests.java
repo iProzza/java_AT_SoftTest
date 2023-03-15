@@ -5,13 +5,15 @@ import ru.stqa.pft.addressbook.model.ContactData;
 import ru.stqa.pft.addressbook.model.Contacts;
 import ru.stqa.pft.addressbook.model.GroupData;
 
+import java.io.File;
+
 import static org.hamcrest.CoreMatchers.equalTo;
 import static org.hamcrest.MatcherAssert.assertThat;
 
 
 public class ContactCreationTests extends TestBase {
 
-  @Test()
+  @Test
   public void addsContactsTestsTest() {
     app.goTo().groupPage();
     if (app.group().all().size() == 0) {
@@ -19,14 +21,23 @@ public class ContactCreationTests extends TestBase {
     }
     app.contact().goToHome();
     Contacts before = app.contact().all();
-    ContactData contact = new ContactData().withFirstName("Volodya").withLastName("MMM").withGroup("test1");
+    File photo = new File("src/test/resources/stru.png");
+    ContactData contact = new ContactData()
+            .withFirstName("Volodya")
+            .withLastName("MMM")
+            .withGroup("test1")
+            .withPhoto(photo);
     app.contact().create(contact, true);
     app.contact().goToHome();
     assertThat(app.contact().count(), equalTo(before.size() + 1));
     Contacts after = app.contact().all();
     assertThat(after, equalTo(
             before.withAdded(contact.withId(after.stream().mapToInt((c) -> c.getId()).max().getAsInt()))));
+
+
   }
+
 }
+
 
 
