@@ -1,0 +1,112 @@
+[
+  {
+    "firstname": "firstname 0",
+    "lastname": "lastname 0",
+    "address": "address 0",
+    "homePhone": "123450",
+    "mobilePhone": "123450",
+    "workPhone": "123450",
+    "email1": "email1_0@mail.ru",
+    "email2": "email2_0@mail.ru",
+    "email3": "email3_0@mail.ru"
+  },
+  {
+    "firstname": "firstname 1",
+    "lastname": "lastname 1",
+    "address": "address 1",
+    "homePhone": "123451",
+    "mobilePhone": "123451",
+    "workPhone": "123451",
+    "email1": "email1_1@mail.ru",
+    "email2": "email2_1@mail.ru",
+    "email3": "email3_1@mail.ru"
+  },
+  {
+    "firstname": "firstname 2",
+    "lastname": "lastname 2",
+    "address": "address 2",
+    "homePhone": "123452",
+    "mobilePhone": "123452",
+    "workPhone": "123452",
+    "email1": "email1_2@mail.ru",
+    "email2": "email2_2@mail.ru",
+    "email3": "email3_2@mail.ru"
+  },
+  {
+    "firstname": "firstname 3",
+    "lastname": "lastname 3",
+    "address": "address 3",
+    "homePhone": "123453",
+    "mobilePhone": "123453",
+    "workPhone": "123453",
+    "email1": "email1_3@mail.ru",
+    "email2": "email2_3@mail.ru",
+    "email3": "email3_3@mail.ru"
+  },
+  {
+    "firstname": "firstname 4",
+    "lastname": "lastname 4",
+    "address": "address 4",
+    "homePhone": "123454",
+    "mobilePhone": "123454",
+    "workPhone": "123454",
+    "email1": "email1_4@mail.ru",
+    "email2": "email2_4@mail.ru",
+    "email3": "email3_4@mail.ru"
+  },
+  {
+    "firstname": "firstname 5",
+    "lastname": "lastname 5",
+    "address": "address 5",
+    "homePhone": "123455",
+    "mobilePhone": "123455",
+    "workPhone": "123455",
+    "email1": "email1_5@mail.ru",
+    "email2": "email2_5@mail.ru",
+    "email3": "email3_5@mail.ru"
+  },
+  {
+    "firstname": "firstname 6",
+    "lastname": "lastname 6",
+    "address": "address 6",
+    "homePhone": "123456",
+    "mobilePhone": "123456",
+    "workPhone": "123456",
+    "email1": "email1_6@mail.ru",
+    "email2": "email2_6@mail.ru",
+    "email3": "email3_6@mail.ru"
+  },
+  {
+    "firstname": "firstname 7",
+    "lastname": "lastname 7",
+    "address": "address 7",
+    "homePhone": "123457",
+    "mobilePhone": "123457",
+    "workPhone": "123457",
+    "email1": "email1_7@mail.ru",
+    "email2": "email2_7@mail.ru",
+    "email3": "email3_7@mail.ru"
+  },
+  {
+    "firstname": "firstname 8",
+    "lastname": "lastname 8",
+    "address": "address 8",
+    "homePhone": "123458",
+    "mobilePhone": "123458",
+    "workPhone": "123458",
+    "email1": "email1_8@mail.ru",
+    "email2": "email2_8@mail.ru",
+    "email3": "email3_8@mail.ru"
+  },
+  {
+    "firstname": "firstname 9",
+    "lastname": "lastname 9",
+    "address": "address 9",
+    "homePhone": "123459",
+    "mobilePhone": "123459",
+    "workPhone": "123459",
+    "email1": "email1_9@mail.ru",
+    "email2": "email2_9@mail.ru",
+    "email3": "email3_9@mail.ru"
+  }
+]

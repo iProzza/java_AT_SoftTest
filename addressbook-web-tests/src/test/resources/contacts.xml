@@ -1,0 +1,112 @@
+<list>
+  <contact>
+    <firstname>firstname 0</firstname>
+    <lastname>lastname 0</lastname>
+    <address>address 0</address>
+    <homePhone>123450</homePhone>
+    <mobilePhone>123450</mobilePhone>
+    <workPhone>123450</workPhone>
+    <email1>email1_0@mail.ru</email1>
+    <email2>email2_0@mail.ru</email2>
+    <email3>email3_0@mail.ru</email3>
+  </contact>
+  <contact>
+    <firstname>firstname 1</firstname>
+    <lastname>lastname 1</lastname>
+    <address>address 1</address>
+    <homePhone>123451</homePhone>
+    <mobilePhone>123451</mobilePhone>
+    <workPhone>123451</workPhone>
+    <email1>email1_1@mail.ru</email1>
+    <email2>email2_1@mail.ru</email2>
+    <email3>email3_1@mail.ru</email3>
+  </contact>
+  <contact>
+    <firstname>firstname 2</firstname>
+    <lastname>lastname 2</lastname>
+    <address>address 2</address>
+    <homePhone>123452</homePhone>
+    <mobilePhone>123452</mobilePhone>
+    <workPhone>123452</workPhone>
+    <email1>email1_2@mail.ru</email1>
+    <email2>email2_2@mail.ru</email2>
+    <email3>email3_2@mail.ru</email3>
+  </contact>
+  <contact>
+    <firstname>firstname 3</firstname>
+    <lastname>lastname 3</lastname>
+    <address>address 3</address>
+    <homePhone>123453</homePhone>
+    <mobilePhone>123453</mobilePhone>
+    <workPhone>123453</workPhone>
+    <email1>email1_3@mail.ru</email1>
+    <email2>email2_3@mail.ru</email2>
+    <email3>email3_3@mail.ru</email3>
+  </contact>
+  <contact>
+    <firstname>firstname 4</firstname>
+    <lastname>lastname 4</lastname>
+    <address>address 4</address>
+    <homePhone>123454</homePhone>
+    <mobilePhone>123454</mobilePhone>
+    <workPhone>123454</workPhone>
+    <email1>email1_4@mail.ru</email1>
+    <email2>email2_4@mail.ru</email2>
+    <email3>email3_4@mail.ru</email3>
+  </contact>
+  <contact>
+    <firstname>firstname 5</firstname>
+    <lastname>lastname 5</lastname>
+    <address>address 5</address>
+    <homePhone>123455</homePhone>
+    <mobilePhone>123455</mobilePhone>
+    <workPhone>123455</workPhone>
+    <email1>email1_5@mail.ru</email1>
+    <email2>email2_5@mail.ru</email2>
+    <email3>email3_5@mail.ru</email3>
+  </contact>
+  <contact>
+    <firstname>firstname 6</firstname>
+    <lastname>lastname 6</lastname>
+    <address>address 6</address>
+    <homePhone>123456</homePhone>
+    <mobilePhone>123456</mobilePhone>
+    <workPhone>123456</workPhone>
+    <email1>email1_6@mail.ru</email1>
+    <email2>email2_6@mail.ru</email2>
+    <email3>email3_6@mail.ru</email3>
+  </contact>
+  <contact>
+    <firstname>firstname 7</firstname>
+    <lastname>lastname 7</lastname>
+    <address>address 7</address>
+    <homePhone>123457</homePhone>
+    <mobilePhone>123457</mobilePhone>
+    <workPhone>123457</workPhone>
+    <email1>email1_7@mail.ru</email1>
+    <email2>email2_7@mail.ru</email2>
+    <email3>email3_7@mail.ru</email3>
+  </contact>
+  <contact>
+    <firstname>firstname 8</firstname>
+    <lastname>lastname 8</lastname>
+    <address>address 8</address>
+    <homePhone>123458</homePhone>
+    <mobilePhone>123458</mobilePhone>
+    <workPhone>123458</workPhone>
+    <email1>email1_8@mail.ru</email1>
+    <email2>email2_8@mail.ru</email2>
+    <email3>email3_8@mail.ru</email3>
+  </contact>
+  <contact>
+    <firstname>firstname 9</firstname>
+    <lastname>lastname 9</lastname>
+    <address>address 9</address>
+    <homePhone>123459</homePhone>
+    <mobilePhone>123459</mobilePhone>
+    <workPhone>123459</workPhone>
+    <email1>email1_9@mail.ru</email1>
+    <email2>email2_9@mail.ru</email2>
+    <email3>email3_9@mail.ru</email3>
+  </contact>
+</list>
