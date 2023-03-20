@@ -70,13 +70,14 @@ public class ContactData {
   @Transient
   private String group;
 
-//  private File photo;
 
   @Column(name = "photo")
   private String photo;
 
   public File getPhoto() {
-    return new File (photo);
+    if (photo != null) {
+      return new File(photo);
+    } return null;
   }
 
   public ContactData withPhoto(File photo) {

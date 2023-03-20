@@ -11,8 +11,8 @@ import static org.testng.Assert.assertEquals;
 
 public class ContactsModificationTests extends TestBase{
   @BeforeMethod public void ensurePreconditions(){
-    app.contact().goToHome();
-    if (app.contact().all().size() == 0) {
+    if (app.db().contacts().size() == 0) {
+      app.contact().goToHome();
       app.contact().create(new ContactData()
               .withFirstName("Volodya").withLastName("Volopas").withGroup("test1"), true);
     }
@@ -21,14 +21,14 @@ public class ContactsModificationTests extends TestBase{
   @Test()
   public void testContactsModification(){
     app.contact().goToHome();
-    Contacts before = app.contact().all();
+    Contacts before = app.db().contacts();
     ContactData modifiedContact = before.iterator().next();
     ContactData contact = new ContactData()
             .withId(modifiedContact.getId()).withFirstName("name").withLastName("lastname").withGroup("test1");
     app.contact().modify(contact);
     app.contact().goToHome();
     assertThat(app.contact().count(), equalTo(before.size()));
-    Contacts after = app.contact().all();
+    Contacts after = app.db().contacts();
     assertThat(after, equalTo(before.without(modifiedContact).withAdded(contact)));
   }
 
