@@ -3,43 +3,84 @@ package ru.stqa.pft.addressbook.model;
 import com.google.gson.annotations.Expose;
 import com.thoughtworks.xstream.annotations.XStreamAlias;
 import com.thoughtworks.xstream.annotations.XStreamOmitField;
+import jakarta.persistence.*;
+import org.hibernate.annotations.Type;
 
 import java.io.File;
 import java.util.Objects;
 
+@Entity
+@Table(name = "addressbook")
 @XStreamAlias("contact")
 public class ContactData {
+  @Id
+  @Column(name = "Id")
   @XStreamOmitField
   private int id = Integer.MAX_VALUE;
+
   @Expose
+  @Column(name = "firstname")
   private  String firstname;
+
   @Expose
+  @Column(name = "lastname")
   private  String lastname;
+
   @Expose
+  @Column(name = "address")
   private String address;
+
+  @Override
+  public String toString() {
+    return "ContactData{" +
+            "id=" + id +
+            ", firstname='" + firstname + '\'' +
+            ", lastname='" + lastname + '\'' +
+            '}';
+  }
+
   @Expose
+  @Column(name = "home")
   private String homePhone;
+
   @Expose
+  @Column(name = "mobile")
   private String mobilePhone;
+
   @Expose
+  @Column(name = "work")
   private String workPhone;
+
   @Expose
+  @Column(name = "email")
   private String email1;
+
   @Expose
+  @Column(name = "email2")
   private String email2;
+
   @Expose
+  @Column(name = "email3")
   private String email3;
+
+  @Transient
   private String allPhones;
+  @Transient
   private String allEmails;
+  @Transient
   private String group;
-  private File photo;
+
+//  private File photo;
+
+  @Column(name = "photo")
+  private String photo;
 
   public File getPhoto() {
-    return photo;
+    return new File (photo);
   }
 
   public ContactData withPhoto(File photo) {
-    this.photo = photo;
+    this.photo = photo.getPath();
     return this;
   }
 
@@ -168,16 +209,6 @@ public class ContactData {
   @Override
   public int hashCode() {
     return Objects.hash(id, firstname);
-  }
-
-  @Override
-  public String toString() {
-    return "ContactData{" +
-            "id=" + id +
-            ", firstname='" + firstname + '\'' +
-            ", lastname='" + lastname + '\'' +
-            ", group='" + group + '\'' +
-            '}';
   }
 
 }
