@@ -4,10 +4,13 @@ import com.google.gson.annotations.Expose;
 import com.thoughtworks.xstream.annotations.XStreamAlias;
 import com.thoughtworks.xstream.annotations.XStreamOmitField;
 import jakarta.persistence.*;
+import org.hibernate.annotations.ManyToAny;
 import org.hibernate.annotations.Type;
 
 import java.io.File;
+import java.util.HashSet;
 import java.util.Objects;
+import java.util.Set;
 
 @Entity
 @Table(name = "addressbook")
@@ -29,15 +32,6 @@ public class ContactData {
   @Expose
   @Column(name = "address")
   private String address;
-
-  @Override
-  public String toString() {
-    return "ContactData{" +
-            "id=" + id +
-            ", firstname='" + firstname + '\'' +
-            ", lastname='" + lastname + '\'' +
-            '}';
-  }
 
   @Expose
   @Column(name = "home")
@@ -67,12 +61,14 @@ public class ContactData {
   private String allPhones;
   @Transient
   private String allEmails;
-  @Transient
-  private String group;
-
 
   @Column(name = "photo")
   private String photo;
+
+  @ManyToMany(fetch = FetchType.EAGER)
+  @JoinTable(name = "address_in_groups",
+          joinColumns = @JoinColumn(name = "id"), inverseJoinColumns = @JoinColumn(name = "group_id"))
+  private Set<GroupData> groups = new HashSet<GroupData>();
 
   public File getPhoto() {
     if (photo != null) {
@@ -144,11 +140,6 @@ public class ContactData {
     return this;
   }
 
-  public ContactData withGroup(String group) {
-    this.group = group;
-    return this;
-  }
-
 
   public int getId() {
     return id;
@@ -195,8 +186,17 @@ public class ContactData {
     return allEmails;
   }
 
-  public String getGroup() {
-    return group;
+  public Groups getGroups() {
+    return new Groups(groups);
+  }
+
+  @Override
+  public String toString() {
+    return "ContactData{" +
+            "id=" + id +
+            ", firstname='" + firstname + '\'' +
+            ", lastname='" + lastname + '\'' +
+            '}';
   }
 
   @Override
@@ -204,12 +204,14 @@ public class ContactData {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
     ContactData that = (ContactData) o;
-    return getId() == that.getId() && Objects.equals(getFirstname(), that.getFirstname()) && Objects.equals(getLastname(), that.getLastname()) && Objects.equals(getAddress(), that.getAddress()) && Objects.equals(getHomePhone(), that.getHomePhone()) && Objects.equals(getMobilePhone(), that.getMobilePhone()) && Objects.equals(getWorkPhone(), that.getWorkPhone()) && Objects.equals(getEmail1(), that.getEmail1()) && Objects.equals(getEmail2(), that.getEmail2()) && Objects.equals(getEmail3(), that.getEmail3()) && Objects.equals(getAllPhones(), that.getAllPhones()) && Objects.equals(getAllEmails(), that.getAllEmails()) && Objects.equals(getGroup(), that.getGroup()) && Objects.equals(getPhoto(), that.getPhoto());
+    return getId() == that.getId() && Objects.equals(getFirstname(), that.getFirstname()) && Objects.equals(getLastname(), that.getLastname()) && Objects.equals(getGroups(), that.getGroups());
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(getId(), getFirstname(), getLastname(), getAddress(), getHomePhone(), getMobilePhone(), getWorkPhone(), getEmail1(), getEmail2(), getEmail3(), getAllPhones(), getAllEmails(), getGroup(), getPhoto());
+    return Objects.hash(getId(), getFirstname(), getLastname(), getGroups());
   }
+
+
 }
 
