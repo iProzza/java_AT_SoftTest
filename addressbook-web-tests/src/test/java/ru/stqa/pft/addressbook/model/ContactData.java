@@ -213,5 +213,14 @@ public class ContactData {
   }
 
 
+  public ContactData inGroup(GroupData group) {
+    groups.add(group);
+    return this;
+  }
+
+  public ContactData outOfGroup(GroupData group) {
+    groups.remove(group);
+    return this;
+  }
 }
 
