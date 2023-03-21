@@ -204,13 +204,12 @@ public class ContactData {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
     ContactData that = (ContactData) o;
-    return id == that.id && Objects.equals(firstname, that.firstname);
+    return getId() == that.getId() && Objects.equals(getFirstname(), that.getFirstname()) && Objects.equals(getLastname(), that.getLastname()) && Objects.equals(getAddress(), that.getAddress()) && Objects.equals(getHomePhone(), that.getHomePhone()) && Objects.equals(getMobilePhone(), that.getMobilePhone()) && Objects.equals(getWorkPhone(), that.getWorkPhone()) && Objects.equals(getEmail1(), that.getEmail1()) && Objects.equals(getEmail2(), that.getEmail2()) && Objects.equals(getEmail3(), that.getEmail3()) && Objects.equals(getAllPhones(), that.getAllPhones()) && Objects.equals(getAllEmails(), that.getAllEmails()) && Objects.equals(getGroup(), that.getGroup()) && Objects.equals(getPhoto(), that.getPhoto());
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, firstname);
+    return Objects.hash(getId(), getFirstname(), getLastname(), getAddress(), getHomePhone(), getMobilePhone(), getWorkPhone(), getEmail1(), getEmail2(), getEmail3(), getAllPhones(), getAllEmails(), getGroup(), getPhoto());
   }
-
 }
 
