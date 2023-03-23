@@ -21,7 +21,7 @@ public class AddContactToGroup extends TestBase{
   public void ensurePreconditions() {
     if (app.db().contacts().size() == 0) {
       app.contact().goToHome();
-      app.contact().create(new ContactData().withFirstName("4GroupAddition").withLastName("Contact"), true);
+      app.contact().create(new ContactData().withFirstName("Добавленная группа").withLastName("Contact"), true);
       contact = app.db().contacts().iterator().next();
       contactCreated = true;
     }
