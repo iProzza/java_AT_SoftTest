@@ -9,6 +9,7 @@ dependencies {
     testImplementation group: 'org.testng', name: 'testng', version: '7.7.1'
     implementation 'org.seleniumhq.selenium:selenium-java:3.5.2'
     implementation group: 'org.hamcrest', name: 'hamcrest', version: '2.2'
+    implementation group: 'commons-net', name: 'commons-net', version: '3.4'
 //    implementation group: 'org.seleniumhq.selenium', name: 'selenium-java', version: '4.8.0'
 
 }
