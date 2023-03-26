@@ -24,7 +24,7 @@ test {
         systemProperty 'target', "${target}"
     }
     if (project.hasProperty('verifyUI')){
-        systemProperty 'target', "${verifyUI}"
+        systemProperty 'verifyUI', "${verifyUI}"
     }
 }
 
