@@ -1,0 +1,53 @@
+apply plugin: 'java'
+
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation group: 'org.testng', name: 'testng', version: '7.7.1'
+    implementation group: 'com.jcabi', name: 'jcabi-github', version: '1.6.3'
+//    implementation group: 'org.seleniumhq.selenium', name: 'selenium-java', version: '4.8.0'
+
+}
+
+task testGroups (type: Test) {
+    useTestNG {
+        suites 'src/test/resources/testng-groups.xml'
+    }
+    if (project.hasProperty('browser')){
+        systemProperty 'browser', "${browser}"
+    }
+    if (project.hasProperty('target')){
+        systemProperty 'target', "${target}"
+    }
+    if (project.hasProperty('verifyUI')){
+        systemProperty 'verifyUI', "${verifyUI}"
+    }
+}
+
+task testContacts (type: Test) {
+    useTestNG {
+        suites 'src/test/resources/testng-contacts.xml'
+    }
+    if (project.hasProperty('browser')){
+        systemProperty 'browser', "${browser}"
+    }
+    if (project.hasProperty('target')){
+        systemProperty 'target', "${target}"
+    }
+    if (project.hasProperty('verifyUI')){
+        systemProperty 'verifyUI', "${verifyUI}"
+    }
+
+}
+
+test {
+    useTestNG()
+}
+
+//tasks.withType(Test) {
+//    scanForTestClasses = false
+//    include "**/*Test.class" // whatever Ant pattern matches your test class files
+//}
